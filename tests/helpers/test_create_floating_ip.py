@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import pytest_rpc.helpers
+import pytest_zigzag.helpers
 import pytest
 import testinfra.backend.base
 import testinfra.host
@@ -28,7 +28,7 @@ def test_floating_ip_created(mocker):
     cr1.stdout = json.dumps(network)
     cr2.stdout = json.dumps(ip_address)
 
-    result = pytest_rpc.helpers.create_floating_ip('mynetwork', myhost)
+    result = pytest_zigzag.helpers.create_floating_ip('mynetwork', myhost)
     assert result == ip_address['name']
 
 
@@ -48,7 +48,7 @@ def test_network_not_found(mocker):
     cr.stdout = ''
 
     with pytest.raises(AssertionError):
-        pytest_rpc.helpers.create_floating_ip('mynetwork', myhost)
+        pytest_zigzag.helpers.create_floating_ip('mynetwork', myhost)
 
 
 def test_floating_ip_failure(mocker):
@@ -71,7 +71,7 @@ def test_floating_ip_failure(mocker):
     cr2.stdout = ''
 
     with pytest.raises(AssertionError):
-        pytest_rpc.helpers.create_floating_ip('mynetwork', myhost)
+        pytest_zigzag.helpers.create_floating_ip('mynetwork', myhost)
 
 
 def test_floating_ip_returns_invalid_json(mocker):
@@ -94,4 +94,4 @@ def test_floating_ip_returns_invalid_json(mocker):
     cr2.stdout = ''
 
     with pytest.raises(AssertionError):
-        pytest_rpc.helpers.create_floating_ip('mynetwork', myhost)
+        pytest_zigzag.helpers.create_floating_ip('mynetwork', myhost)

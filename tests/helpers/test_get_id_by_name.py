@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import pytest_rpc.helpers
+import pytest_zigzag.helpers
 import json
 
 """Test cases for the 'get_id_by_name' helper function."""
@@ -15,7 +15,7 @@ def test_successful_query(mocker):
     myhost = mocker.MagicMock()
     myhost.run.return_value = myout
 
-    result = pytest_rpc.helpers.get_id_by_name('server', 'myserver', myhost)
+    result = pytest_zigzag.helpers.get_id_by_name('server', 'myserver', myhost)
     assert result == test_id
 
 
@@ -27,7 +27,7 @@ def test_invalid_json(mocker):
     myhost = mocker.MagicMock()
     myhost.run.return_value = myout
 
-    result = pytest_rpc.helpers.get_id_by_name('server', 'myserver', myhost)
+    result = pytest_zigzag.helpers.get_id_by_name('server', 'myserver', myhost)
     assert result is None
 
 
@@ -40,5 +40,5 @@ def test_no_id(mocker):
     myhost = mocker.MagicMock()
     myhost.run.return_value = myout
 
-    result = pytest_rpc.helpers.get_id_by_name('server', 'myserver', myhost)
+    result = pytest_zigzag.helpers.get_id_by_name('server', 'myserver', myhost)
     assert result is None

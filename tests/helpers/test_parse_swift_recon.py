@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import pytest_rpc.helpers
+import pytest_zigzag.helpers
 
 """Test cases for the 'parse_swift_recon' helper function."""
 
@@ -10,7 +10,7 @@ def test_empty():
 
     recon_str = ''
 
-    assert pytest_rpc.helpers.parse_swift_recon(recon_str) == []
+    assert pytest_zigzag.helpers.parse_swift_recon(recon_str) == []
 
 
 def test_expected_output():
@@ -29,7 +29,7 @@ def test_expected_output():
 ===============================================================================
 """
 
-    result = pytest_rpc.helpers.parse_swift_recon(swift_recon_out)
+    result = pytest_zigzag.helpers.parse_swift_recon(swift_recon_out)
     assert len(result) == 3  # 3 data blocks in output
     assert len(result[0]) == 1  # 1 line in first data block
     assert len(result[1]) == 2  # 2 lines in second data block
@@ -56,7 +56,7 @@ massa scelerisque malesuada eget non odio. Nulla nec condimentum felis.
 Sed scelerisque commodo neque dignissim rutrum. Nullam ultrices eleifend
 ipsum. Aliquam erat volutpat."""
 
-    result = pytest_rpc.helpers.parse_swift_recon(garbage)
+    result = pytest_zigzag.helpers.parse_swift_recon(garbage)
 
     assert type(result) is list
     assert len(result) is 0

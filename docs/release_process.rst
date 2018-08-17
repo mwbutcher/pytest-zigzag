@@ -2,7 +2,7 @@
 Release Process
 ===============
 
-The easiest way to release a new version of pytest-rpc is to use make.
+The easiest way to release a new version of pytest-zigzag is to use make.
 
 1. First you will need to know the username and password for the account you want to use to release to PyPI shared_accounts_
 

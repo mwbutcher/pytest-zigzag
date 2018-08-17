@@ -65,11 +65,11 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr .pytest_cache/
 
 clean-venv: check-venv ## remove all packages from current virtual environment
-	@pip uninstall -y pytest-rpc || echo "Skipping uninstall of pytest-rpc or already uninstalled"
+	@pip uninstall -y pytest-zigzag || echo "Skipping uninstall of pytest-zigzag or already uninstalled"
 	@source virtualenvwrapper.sh && wipeenv || echo "Skipping wipe of environment"
 
 lint: ## check style with flake8
-	flake8 pytest_rpc setup.py tests
+	flake8 pytest_zigzag setup.py tests
 
 test: ## run tests quickly with the default Python
 	py.test
@@ -78,11 +78,11 @@ test-all: ## run tests on every Python version with tox
 	tox
 
 coverage-html: ## check code coverage with an HTML report
-	py.test --cov-report html --cov=pytest_rpc tests/
+	py.test --cov-report html --cov=pytest_zigzag tests/
 	$(BROWSER) htmlcov/index.html
 
 coverage-term: ## check code coverage with a simple terminal report
-	py.test --cov-report term-missing --cov=pytest_rpc tests/
+	py.test --cov-report term-missing --cov=pytest_zigzag tests/
 
 release: clean ## package and upload a release
 	python setup.py sdist upload

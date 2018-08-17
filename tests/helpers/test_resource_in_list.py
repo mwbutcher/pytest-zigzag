@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import pytest_rpc.helpers
+import pytest_zigzag.helpers
 import testinfra.backend.base
 import testinfra.host
 import json
@@ -30,8 +30,8 @@ def test_resource_in_list_and_expect_true(mocker):
                    )
     mocker.patch('testinfra.host.Host.run', return_value=command_result)
 
-    assert pytest_rpc.helpers._resource_in_list('server', 'myserver', True,
-                                                myhost, 1)
+    assert pytest_zigzag.helpers._resource_in_list('server', 'myserver', True,
+                                                   myhost, 1)
 
 
 def test_resource_in_list_and_expect_false(mocker):
@@ -57,8 +57,8 @@ def test_resource_in_list_and_expect_false(mocker):
                    )
     mocker.patch('testinfra.host.Host.run', return_value=command_result)
 
-    assert not pytest_rpc.helpers._resource_in_list('server', 'myserver', False,
-                                                    myhost, 1)
+    assert not pytest_zigzag.helpers._resource_in_list('server', 'myserver', False,
+                                                       myhost, 1)
 
 
 def test_resource_not_in_list_and_expect_true(mocker):
@@ -73,8 +73,8 @@ def test_resource_not_in_list_and_expect_true(mocker):
     command_result.stdout = json.dumps([])
     mocker.patch('testinfra.host.Host.run', return_value=command_result)
 
-    assert not pytest_rpc.helpers._resource_in_list('server', 'myserver', True,
-                                                    myhost, 1)
+    assert not pytest_zigzag.helpers._resource_in_list('server', 'myserver', True,
+                                                       myhost, 1)
 
 
 def test_resource_not_in_list_and_expect_false(mocker):
@@ -89,5 +89,5 @@ def test_resource_not_in_list_and_expect_false(mocker):
     command_result.stdout = json.dumps([])
     mocker.patch('testinfra.host.Host.run', return_value=command_result)
 
-    assert pytest_rpc.helpers._resource_in_list('server', 'myserver', False,
-                                                myhost, 1)
+    assert pytest_zigzag.helpers._resource_in_list('server', 'myserver', False,
+                                                   myhost, 1)

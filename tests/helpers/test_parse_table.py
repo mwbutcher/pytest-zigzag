@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import pytest_rpc.helpers
+import pytest_zigzag.helpers
 
 """Test cases for the 'parse_table' helper function."""
 
@@ -10,7 +10,7 @@ def test_empty():
 
     table_str = ''
 
-    assert pytest_rpc.helpers.parse_table(table_str) == ([], [])
+    assert pytest_zigzag.helpers.parse_table(table_str) == ([], [])
 
 
 def test_table():
@@ -33,7 +33,7 @@ def test_table():
                 +----+----+----+----+----+----+----+
     """.format(*(headers + row1 + row2))
 
-    assert pytest_rpc.helpers.parse_table(table_str) == (headers, [row1, row2, row3])
+    assert pytest_zigzag.helpers.parse_table(table_str) == (headers, [row1, row2, row3])
 
 
 def test_garbage():
@@ -47,7 +47,7 @@ def test_garbage():
     Sed scelerisque commodo neque dignissim rutrum. Nullam ultrices eleifend
     ipsum. Aliquam erat volutpat."""
 
-    result = pytest_rpc.helpers.parse_table(garbage)
+    result = pytest_zigzag.helpers.parse_table(garbage)
 
     assert type(result) is tuple
     assert len(result) is 2

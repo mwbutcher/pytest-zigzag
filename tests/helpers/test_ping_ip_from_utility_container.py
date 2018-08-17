@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import pytest_rpc.helpers
+import pytest_zigzag.helpers
 import testinfra.backend.base
 import testinfra.host
 
@@ -21,7 +21,7 @@ def test_success(mocker):
     mocker.patch('testinfra.host.Host.run', return_value=cr)
     ip = '192.168.1.1'
 
-    assert pytest_rpc.helpers.ping_ip_from_utility_container(ip, myhost)
+    assert pytest_zigzag.helpers.ping_ip_from_utility_container(ip, myhost)
 
 
 def test_failure(mocker):
@@ -39,4 +39,4 @@ def test_failure(mocker):
     mocker.patch('testinfra.host.Host.run', return_value=cr)
     ip = '192.168.1.1'
 
-    assert not pytest_rpc.helpers.ping_ip_from_utility_container(ip, myhost)
+    assert not pytest_zigzag.helpers.ping_ip_from_utility_container(ip, myhost)

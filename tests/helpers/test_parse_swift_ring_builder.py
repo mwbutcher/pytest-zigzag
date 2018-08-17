@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import pytest_rpc.helpers
+import pytest_zigzag.helpers
 
 """Test cases for the 'parse_swift_ring_builder' helper function."""
 
@@ -10,7 +10,7 @@ def test_empty():
 
     ring_str = ''
 
-    result = pytest_rpc.helpers.parse_swift_ring_builder(ring_str)
+    result = pytest_zigzag.helpers.parse_swift_ring_builder(ring_str)
 
     assert type(result) is dict
     assert len(result) is 0
@@ -38,7 +38,7 @@ Devices:    id  region  zone      ip address  port replication ip  replication p
 """  # noqa
 
     result = \
-        pytest_rpc.helpers.parse_swift_ring_builder(swift_ring_builder_out)
+        pytest_zigzag.helpers.parse_swift_ring_builder(swift_ring_builder_out)
 
     assert type(result) == dict
     assert 'zones' in result.keys()
@@ -65,7 +65,7 @@ massa scelerisque malesuada eget non odio. Nulla nec condimentum felis.
 Sed scelerisque commodo neque dignissim rutrum. Nullam ultrices eleifend
 ipsum. Aliquam erat volutpat."""
 
-    result = pytest_rpc.helpers.parse_swift_ring_builder(garbage)
+    result = pytest_zigzag.helpers.parse_swift_ring_builder(garbage)
 
     assert type(result) is dict
     assert len(result) is 0

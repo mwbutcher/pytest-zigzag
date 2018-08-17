@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import pytest_rpc.helpers
+import pytest_zigzag.helpers
 import testinfra.backend.base
 import testinfra.host
 
@@ -26,6 +26,6 @@ def test_expected_constructed_run_command(mocker):
     expected_run_cmd = ("lxc-attach -n $(lxc-ls -1 | grep {} | head -n 1) "
                         "-- bash -c '{}'".format(container_type, wrapped_cmd))
 
-    result = pytest_rpc.helpers.run_on_swift(cmd, myhost)
+    result = pytest_zigzag.helpers.run_on_swift(cmd, myhost)
     myhost.run.assert_called_with(expected_run_cmd)
     assert result == command_result

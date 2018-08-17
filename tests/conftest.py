@@ -11,13 +11,13 @@ pytest_plugins = ['pytester']
 # Classes
 # ======================================================================================================================
 class JunitXml(object):
-    """A helper class for obtaining elements from JUnitXML result files produced by pytest-rpc."""
+    """A helper class for obtaining elements from JUnitXML result files produced by pytest-zigzag."""
 
     def __init__(self, xml_file_path):
         """Create a JunitXML class object.
 
         Args:
-            xml_file_path (str): A file path to a JUnitXML file created using the pytest-rpc plug-in.
+            xml_file_path (str): A file path to a JUnitXML file created using the pytest-zigzag plug-in.
         """
 
         self._xml_file_path = xml_file_path

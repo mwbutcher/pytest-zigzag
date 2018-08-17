@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import pytest_rpc.helpers
+import pytest_zigzag.helpers
 import pytest
 import testinfra.backend.base
 import testinfra.host
@@ -24,9 +24,9 @@ def test_success(mocker):
     cr.rc = 0
     cr.stdout = json.dumps(server)
 
-    result = pytest_rpc.helpers.create_snapshot_from_instance('mysnapshot',
-                                                              'myinstance',
-                                                              myhost)
+    result = pytest_zigzag.helpers.create_snapshot_from_instance('mysnapshot',
+                                                                 'myinstance',
+                                                                 myhost)
     assert result == server['id']
 
 
@@ -50,6 +50,6 @@ def test_failure(mocker):
     cr2.stdout = 'Invalid json'
 
     with pytest.raises(AssertionError):
-        pytest_rpc.helpers.create_snapshot_from_instance('mysnapshot',
-                                                         'myinstance',
-                                                         myhost)
+        pytest_zigzag.helpers.create_snapshot_from_instance('mysnapshot',
+                                                            'myinstance',
+                                                            myhost)

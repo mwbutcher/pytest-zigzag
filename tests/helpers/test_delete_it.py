@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import pytest_rpc.helpers
+import pytest_zigzag.helpers
 import pytest
 import testinfra.backend.base
 import testinfra.host
@@ -26,7 +26,7 @@ def test_success(mocker):
     cr1.stdout = json.dumps(server)
     cr2.stdout = ''
 
-    assert not pytest_rpc.helpers.delete_it('server', 'myserver', myhost)
+    assert not pytest_zigzag.helpers.delete_it('server', 'myserver', myhost)
 
 
 def test_failure(mocker):
@@ -49,4 +49,4 @@ def test_failure(mocker):
     cr2.stdout = ''
 
     with pytest.raises(AssertionError):
-        pytest_rpc.helpers.delete_it('server', 'myserver', myhost)
+        pytest_zigzag.helpers.delete_it('server', 'myserver', myhost)

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import pytest_rpc.helpers
+import pytest_zigzag.helpers
 import pytest
 import json
 import testinfra.backend.base
@@ -23,7 +23,7 @@ def test_successful_deletion(mocker):
     cr1.stdout = json.dumps(server)
     cr2.stdout = '[]'
 
-    assert not pytest_rpc.helpers.delete_volume('myvolume', myhost)
+    assert not pytest_zigzag.helpers.delete_volume('myvolume', myhost)
 
 
 def test_failed_deletion(mocker):
@@ -40,4 +40,4 @@ def test_failed_deletion(mocker):
     cr.stdout = json.dumps(server)
 
     with pytest.raises(AssertionError):
-        pytest_rpc.helpers.delete_volume('myvolume', myhost)
+        pytest_zigzag.helpers.delete_volume('myvolume', myhost)

@@ -11,7 +11,7 @@ helps, and credit will always be given.
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up ``pytest-rpc`` for local development using the handy built-in ``make`` tasks.
+Ready to contribute? Here's how to set up ``pytest-zigzag`` for local development using the handy built-in ``make`` tasks.
 If you're not using virtualenvwrapper_ then just be aware that some of the available ``make`` tasks will not work.
 
 Prerequisites
@@ -31,18 +31,18 @@ Execute the following command to get a full list of ``make`` tasks::
 Using Make Tasks for Development Environment Setup
 --------------------------------------------------
 
-1. Fork the ``pytest-rpc`` repo on GitHub.
+1. Fork the ``pytest-zigzag`` repo on GitHub.
 2. Create a virtual environment using virtualenvwrapper_ if you have not created one already::
 
-    $ mkvirtualenv pytest-rpc
+    $ mkvirtualenv pytest-zigzag
 
 3. Clone your fork locally::
 
-    $ git clone git@github.com:your_name_here/pytest-rpc.git
+    $ git clone git@github.com:your_name_here/pytest-zigzag.git
 
 4. Setup develop environment::
 
-    $ cd pytest-rpc/
+    $ cd pytest-zigzag/
     $ make develop-venv # OR 'make develop' if you're not using virtualenvwrapper
 
 5. Create a branch for local development::
@@ -78,7 +78,7 @@ Before you submit a pull request, check that it meets these guidelines:
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
 3. The pull request should work for Python 2.7, 3.4, 3.5 and 3.6, and for PyPy. Check
-   https://travis-ci.org/rcbops/pytest-rpc/pull_requests
+   https://travis-ci.org/rcbops/pytest-zigzag/pull_requests
    and make sure that the tests pass for all supported Python versions.
 
 Tips
@@ -88,12 +88,12 @@ Get a list of available `make` tasks::
 
    $ make help
 
-Install "pytest-rpc" into the active virtualenv::
+Install "pytest-zigzag" into the active virtualenv::
 
    $ make install-venv # OR 'make install' if you're not using virtualenvwrapper
 
 Run a subset of tests::
 
-   $ py.test tests/test_rpc.py
+   $ py.test tests/test_zigzag.py
 
 .. _virtualenvwrapper: https://virtualenvwrapper.readthedocs.io/en/latest/

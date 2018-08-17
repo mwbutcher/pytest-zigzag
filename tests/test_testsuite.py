@@ -7,7 +7,7 @@
 # ======================================================================================================================
 from __future__ import absolute_import
 import os
-from pytest_rpc import ASC_ENV_VARS
+from pytest_zigzag import ASC_ENV_VARS
 from tests.conftest import run_and_parse, is_sub_dict
 
 

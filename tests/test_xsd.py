@@ -7,7 +7,7 @@
 # ======================================================================================================================
 from __future__ import absolute_import
 from lxml import etree
-from pytest_rpc import MK8S_ENV_VARS, ASC_ENV_VARS, get_xsd
+from pytest_zigzag import MK8S_ENV_VARS, ASC_ENV_VARS, get_xsd
 from tests.conftest import run_and_parse
 from tests.conftest import run_and_parse_with_config
 

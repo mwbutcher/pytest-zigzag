@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import pytest_rpc.helpers
+import pytest_zigzag.helpers
 import pytest
 import json
 import testinfra.backend.base
@@ -31,7 +31,7 @@ def test_success(mocker):
         "network_name": 'network',
     }
 
-    result = pytest_rpc.helpers.create_instance(data, myhost)
+    result = pytest_zigzag.helpers.create_instance(data, myhost)
     assert result == resource['id']
 
 
@@ -64,4 +64,4 @@ def test_failure(mocker):
     }
 
     with pytest.raises(AssertionError):
-        pytest_rpc.helpers.create_instance(data, myhost)
+        pytest_zigzag.helpers.create_instance(data, myhost)

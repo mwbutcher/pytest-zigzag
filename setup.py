@@ -13,22 +13,22 @@ with open('HISTORY.rst') as history_file:
 
 python_requirements = '>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*'
 requirements = ['pytest>=3.5.0', 'setuptools', 'sh']
-packages = ['pytest_rpc']
+packages = ['pytest_zigzag']
 entry_points = {
     'pytest11': [
-        'rpc=pytest_rpc',
+        'zigzag=pytest_zigzag',
     ],
 }
 
 setup(
-    name='pytest-rpc',
-    version='0.11.0',
-    author='rpc-automation',
-    author_email='rpc-automation@rackspace.com',
+    name='pytest-zigzag',
+    version='0.0.0',
+    author='zigzag-automation',
+    author_email='zigzag-automation@rackspace.com',
     license='Apache Software License 2.0',
-    url='https://github.com/rcbops/pytest-rpc',
-    keywords='py.test pytest pytest-rpc',
-    description='Extend py.test for RPC OpenStack testing.',
+    url='https://github.com/rcbops/pytest-zigzag',
+    keywords='py.test pytest pytest-zigzag',
+    description='Extend py.test for zigzag testing.',
     long_description=readme + '\n\n' + history,
     classifiers=[
         'Development Status :: 4 - Beta',

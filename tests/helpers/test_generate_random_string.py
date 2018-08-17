@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import pytest_rpc.helpers
+import pytest_zigzag.helpers
 
 """Test cases for the 'generate_random_string' helper function."""
 
@@ -9,7 +9,7 @@ def test_zero_length():
 
     value = 0
 
-    result = pytest_rpc.helpers.generate_random_string(value)
+    result = pytest_zigzag.helpers.generate_random_string(value)
     assert type(result) == str
     assert '-' not in result
     assert len(result) == value
@@ -20,7 +20,7 @@ def test_standard_length():
 
     value = 10
 
-    result = pytest_rpc.helpers.generate_random_string(value)
+    result = pytest_zigzag.helpers.generate_random_string(value)
     assert type(result) == str
     assert '-' not in result
     assert len(result) == value
@@ -32,7 +32,7 @@ def test_too_long():
 
     value = 33
 
-    result = pytest_rpc.helpers.generate_random_string(value)
+    result = pytest_zigzag.helpers.generate_random_string(value)
     assert type(result) == str
     assert '-' not in result
     assert len(result) < value

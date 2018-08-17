@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-__version__ = '0.11.0'
+__version__ = '0.0.0'
 
 # ======================================================================================================================
 # Imports
@@ -20,8 +20,8 @@ ASC_ENV_VARS = ['BUILD_URL',
                 'RE_JOB_IMAGE',
                 'RE_JOB_SCENARIO',
                 'RE_JOB_BRANCH',
-                'RPC_RELEASE',
-                'RPC_PRODUCT_RELEASE',
+                'ZIGZAG_RELEASE',
+                'ZIGZAG_PRODUCT_RELEASE',
                 'OS_ARTIFACT_SHA',
                 'PYTHON_ARTIFACT_SHA',
                 'APT_ARTIFACT_SHA',
@@ -191,8 +191,8 @@ def get_xsd(ci_environment='asc'):
     """
 
     if ci_environment == 'asc':
-        return pkg_resources.resource_stream('pytest_rpc', 'data/molecule_junit.xsd')
+        return pkg_resources.resource_stream('pytest_zigzag', 'data/molecule_junit.xsd')
     elif ci_environment == 'mk8s':
-        return pkg_resources.resource_stream('pytest_rpc', 'data/mk8s_junit.xsd')
+        return pkg_resources.resource_stream('pytest_zigzag', 'data/mk8s_junit.xsd')
     else:
         raise RuntimeError("Unknown ci-environment '{}'".format(ci_environment))
